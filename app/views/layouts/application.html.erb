@@ -10,9 +10,24 @@
   </head>
 
   <body>
-    <main class='<%= controller.controller_name %>' >
-      <%= yield %>
-    </main>
+    <header class='main'>
+      <%= image_tag 'logo.png', alt: 'Hbc' %>
+      <h1><%= @page_title %></h1>
+    </header>
+
+    <section class='content'>
+      <nav class='side_nav'>
+        <ul>
+          <li><%= link_to 'Home',      store_index_path %></li>
+          <li><%= link_to 'Questions', "#" %></li>
+          <li><%= link_to 'News',      "#" %></li>
+          <li><%= link_to 'Contact',   "#" %></li>
+        </ul>
+      </nav>
+      <main class='<%= controller.controller_name %>' >
+        <%= yield %>
+      </main>
+    </section>
   </body>
 
 </html>
