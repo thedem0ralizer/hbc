@@ -4,6 +4,19 @@
 
 <ul>
   <% @cart.line_items.each do |item| %>
-    <li><%= item.product.name %></li>
+    <li><%= item.quantity %> &times; <%= item.product.name %></li>
   <% end %>
 </ul>
+
+<table style='width:100%'>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+    </tr>
+  <% @cart.line_items.each do |item| %>
+    <tr>
+      <td><%= item.product.name %></td>
+      <td><%= item.quantity %></td>
+    </tr>
+  <% end %>
+</table>
